@@ -6,6 +6,18 @@ This project enables you to estimate the number of equivalent complete generatio
 
 This was initially created in order to estimate the effective population size based on pedigree, as shown by Leroy et al. (2013). Later it was shown that trends in EqCg over years can be used to determine if a breeding program has utilized a strategy that would lead to genetic gain over time (Rutkoski 2018).
 
+## Example
+```
+#read in a csv of the pedigree file
+ped<- read.csv('sample.pedigree.csv', row.names=1, as.is=TRUE)
+
+#read in a csv of containing the ids of the individuals of interest
+targ<- read.csv('targetIDs.csv', as.is=TRUE, row.names=1)[,1]
+
+#use the getEqcgs function to obtain a vector of EqCg values for the individuals of interest
+rslt<- getEqcgs(ped, targ)
+```
+
 ## References
 
 Boichard, D., L. Maignel, and É. Verrier. 1997. The value of using probabilities of gene origin to
